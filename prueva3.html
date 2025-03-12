@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Académico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f4dc; /* Fondo claro */
+            color: #333; /* Color de texto principal */
+            display: flex;
+            height: 100vh;
+            overflow-x: hidden; /* Desactivar scroll horizontal */
+            overflow-y: auto; /* Habilitar scroll vertical */
+        }
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #fff; /* Blanco */
+            position: fixed;
+            left: -250px;
+            top: 0;
+            height: 100%;
+            transition: left 0.3s ease;
+            padding-top: 50px;
+            box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+        }
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            color: #aa0c09; /* Naranja */
+            text-decoration: none;
+            font-size: 18px;
+            border-bottom: 1px solid #ddd; /* Líneas separadoras */
+        }
+        .sidebar a:hover {
+            background-color: #aa0c09; /* Naranja */
+            color: white;
+        }
+        /* Botón de menú apartado del área del menú */
+        .menu-button {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #aa0c09; /* Naranja */
+            color: white;
+            border: none;
+            font-size: 18px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+        }
+        .header {
+            background-color: #aa0c09; /* Rojo */
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        .header h1 {
+            color: white; /* Título en blanco */
+            margin: 0; /* Eliminar margen */
+            margin-left: 10px; /* Separación sutil del borde izquierdo */
+        }
+        .header .profile-icon {
+            width: 30px; /* Hacer el ícono más pequeño */
+            height: 30px; /* Hacer el ícono más pequeño */
+            background-color: #ff6347; /* Naranja suave */
+            border-radius: 50%;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .main-content {
+            padding: 20px;
+            margin-left: 0;
+            width: 100%;
+            transition: margin-left 0.3s ease;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        h2 {
+            color: #333;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <a href="#">Perfil</a>
+    <a href="#">Cursos de Posgrados</a>
+    <a href="#">Entrenamiento de Personal</a>
+    <a href="#">Evaluación Docente</a>
+    <a href="#">Gestión de Datos Personales</a>
+    <a href="#">Adscripción y Académicas</a>
+    <a href="#">Permisos para Laborar en Otras Instituciones</a>
+    <a href="#">Permisos de Licencia o Comisión Académicas</a>
+    <a href="#">Producción Académica</a>
+    <a href="#">Productos y Actividad de Vinculaciones</a>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <!-- Botón de menú apartado del área del menú -->
+    <button class="menu-button" onclick="toggleSidebar()">☰</button>
+    <div class="header">
+        <h1>Acciones en el Portal Académico</h1>
+        <div class="profile-icon"></div>
+    </div>
+
+    <!-- Información Académica -->
+    <div class="section">
+        <h2>Información Académica</h2>
+        <h3>Grado Académico</h3>
+        <table>
+            <tr>
+                <th>Nivel/Grado</th>
+                <th>Fecha de obtención</th>
+                <th>Carrera o especialidad</th>
+                <th>Institución de procedencia</th>
+                <th>Cédula</th>
+            </tr>
+            <tr>
+                <td>Doctorado</td>
+                <td>06/07/2016</td>
+                <td>Ciencias en Ecología y Manejo de Sistemas Tropicales</td>
+                <td>Universidad Juárez Autónoma de Tabasco</td>
+                <td>10637450</td>
+            </tr>
+            <tr>
+                <td>Maestría</td>
+                <td>01/02/2001</td>
+                <td>Fruticultura en el Instituto de Recursos Genéticos y Productividad</td>
+                <td>Colegio de Postgraduados</td>
+                <td>4675295</td>
+            </tr>
+            <tr>
+                <td>Licenciatura</td>
+                <td>12/12/1997</td>
+                <td>Licenciado en Biología</td>
+                <td>Universidad Juárez Autónoma de Tabasco</td>
+                <td>3565550</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h3>Niveles de SNI</h3>
+        <table>
+            <tr>
+                <th>Nivel de SNI</th>
+                <th>Fecha de inicio del nombramiento</th>
+                <th>Fecha de fin del nombramiento</th>
+                <th>Observaciones</th>
+            </tr>
+            <tr>
+                <td>Nivel I</td>
+                <td>01/01/2021</td>
+                <td>31/12/2025</td>
+                <td>Extensión</td>
+            </tr>
+            <tr>
+                <td>Nivel II</td>
+                <td>01/01/2018</td>
+                <td>31/12/2020</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h3>Síntesis Curricular</h3>
+        <p><strong>Áreas de interés:</strong></p>
+        <table>
+            <tr>
+                <th>Categoría</th>
+                <th>Fecha del dictamen</th>
+                <th>Año de próxima evaluación</th>
+            </tr>
+            <tr>
+                <td>Investigador Asociado "C"</td>
+                <td>20/03/2024</td>
+                <td>2025</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h3>Resumen Profesional</h3>
+        <p>Sistema de Información Geográfica y Teledetección enfocado a vulnerabilidad, humedales y cambios de usos del suelo.</p>
+        <p>Doctor en ciencias en ecología y manejo de sistemas tropicales, con la tesis Vulnerabilidad física de la zona costera de Tabasco y Campeche, México. He impartido cursos a nivel licenciatura y posgrado, todo relacionado con sistema de información geográfica. Se ha colaborado como Director y Asesor de estudiantes de Licenciatura y Maestría. También he participado en diversos trabajos de investigación, en Cambios de usos y tipos de suelos, clasificación de humedales, vulnerabilidad y cambio.</p>
+        <p><strong>Áreas de especialización:</strong> Sistema de Información Geográfica, Cambios de usos del suelo, Vulnerabilidad, Cambio climático, Inundaciones, análisis de imágenes de satélite y ortolotos.</p>
+    </div>
+</div>
+
+<script>
+    function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        var mainContent = document.querySelector(".main-content");
+
+        // Deslizar el menú lateral
+        if (sidebar.style.left === "0px") {
+            sidebar.style.left = "-250px"; // Oculta el menú
+            mainContent.style.marginLeft = "0"; // Sin margen para el contenido
+        } else {
+            sidebar.style.left = "0px"; // Muestra el menú
+            mainContent.style.marginLeft = "250px"; // Desplaza el contenido hacia la derecha
+        }
+    }
+</script>
+
+</body>
+</html>
